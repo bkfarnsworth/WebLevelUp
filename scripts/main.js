@@ -1,4 +1,3 @@
-
 $('.submit').on('click', function(){
 
 	//get every score and save to db
@@ -49,6 +48,11 @@ LevelUp.prototype.loadCategories = function(){
 	var setMessage = function(data) {
 	  var val = data.val();
 	  renderCategory(data.key, val);
+
+	  setTimeout(function(){
+	  	renderChart();
+	  }, 2000)
+
 	}.bind(this);
 	this.categoriesRef.on('child_added', setMessage);
 	// this.categoriesRef.limitToLast(12).on('child_changed', setMessage);
